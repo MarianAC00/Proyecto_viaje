@@ -3,13 +3,11 @@ package com.iesemilidarder.malcaraz.data;
 import java.util.Date;
 
 public abstract class Producto {
-    private Country country;
+    private String country;
     private String titulo;
-    private String imagen;
     private String description;
     private String tipo;
-    private Date horario;
-    private Float precio;
+    private String id;
 
     public String getTitulo() {
         return titulo;
@@ -19,20 +17,12 @@ public abstract class Producto {
         this.titulo = titulo;
     }
 
-    public Country getCountry() {
+    public String getCountry() {
         return country;
     }
 
-    public void setCountry(Country country) {
+    public void setCountry(String country) {
         this.country = country;
-    }
-
-    public String getImagen() {
-        return imagen;
-    }
-
-    public void setImagen(String imagen) {
-        this.imagen = imagen;
     }
 
     public String getDescription() {
@@ -51,21 +41,21 @@ public abstract class Producto {
         this.tipo = tipo;
     }
 
-    public Date getHorario() {
-        return horario;
-    }
-
-    public void setHorario(Date horario) {
-        this.horario = horario;
-    }
-
-    public Float getPrecio() {
-        return precio;
+    public String getPrecio() {
+        return id;
     }
 
     public void setPrecio(Float precio) {
-        this.precio = precio;
+        this.id = id;
     }
 
+public Producto(String country,String titulo,String description,String tipo,String id ){
+        this.country=country;
+        this.titulo=titulo;
+        this.description=description;
+        this.tipo=tipo;
+        this.id=id;
+
+}
 
 }

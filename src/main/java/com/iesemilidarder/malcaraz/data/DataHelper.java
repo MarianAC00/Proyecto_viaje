@@ -1,24 +1,14 @@
 package com.iesemilidarder.malcaraz.data;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class DataHelper {
-    private static List<Producto> data = new ArrayList<>();
+public static List<Restaurante> Restaurantes = new ArrayList<Restaurante>(Arrays.asList(
 
-    public static List<Producto> getData(){
-        doInit();
+   new Restaurante()("ES", "R1","loquesea","xino",)
 
 
-    }
-
-    public void doInit(){
-        if (data.isEmpty()){
-            for (int i 100;i>50;i++){
-                Hotel hotel =new Hotel();
-            }
-        }
-
-    }
-
+));
 }
