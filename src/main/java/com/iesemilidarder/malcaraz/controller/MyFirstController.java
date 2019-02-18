@@ -16,6 +16,7 @@ import java.util.List;
  */
 @RestController
 public class MyFirstController {
+    @RequestMapping("/")
 
     @RequestMapping("/hotelAll")
     public List <Producto> getHotels(){

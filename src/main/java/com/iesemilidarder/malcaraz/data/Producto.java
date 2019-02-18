@@ -49,6 +49,7 @@ public abstract class Producto {
         this.id = id;
     }
 
+
 public Producto(String country,String titulo,String description,String tipo,String id ){
         this.country=country;
         this.titulo=titulo;
