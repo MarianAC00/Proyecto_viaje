@@ -12,12 +12,31 @@ public static List<Restaurante> Restaurantes = new ArrayList<Restaurante>(Arrays
         new Restaurante ("DO", "R3","dominicano","zino","3"),
         new Restaurante ("MX", "R4","mexicano","cano","4")
 ));
-//Todos restaurante
+//Todos restaurantes
 
-    public static List<Restaurante> getAll() {
-
-
-
-        return Restaurantes;
+    public static List<Restaurante> getAll() { return Restaurantes; }
+//filtrar por id
+    public Restaurante getRestaurante (String id){
+        return Restaurantes.stream().filter(t ->t.getId().equals(id)).findFirst().get;
     }
+//Add Restauranete
+    public void addRestaurante;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
