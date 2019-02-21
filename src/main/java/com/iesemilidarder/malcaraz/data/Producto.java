@@ -1,7 +1,5 @@
 package com.iesemilidarder.malcaraz.data;
 
-import java.util.Date;
-
 public abstract class Producto {
     private String country;
     private String titulo;
@@ -9,20 +7,20 @@ public abstract class Producto {
     private String tipo;
     private String id;
 
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
     public String getCountry() {
         return country;
     }
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
     public String getDescription() {
@@ -41,16 +39,15 @@ public abstract class Producto {
         this.tipo = tipo;
     }
 
-    public String getPrecio() {
+    public String getId() {
         return id;
     }
 
-    public void setPrecio(Float precio) {
+    public void setId(String id) {
         this.id = id;
     }
 
-
-public Producto(String country,String titulo,String description,String tipo,String id ){
+    public Producto(String country, String titulo, String description, String tipo, String id ){
         this.country=country;
         this.titulo=titulo;
         this.description=description;

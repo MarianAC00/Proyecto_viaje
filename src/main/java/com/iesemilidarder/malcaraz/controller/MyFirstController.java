@@ -1,11 +1,9 @@
 package com.iesemilidarder.malcaraz.controller;
 
-import com.iesemilidarder.malcaraz.data.DataHelper;
-import com.iesemilidarder.malcaraz.data.Hotel;
-import com.iesemilidarder.malcaraz.data.Producto;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import com.iesemilidarder.malcaraz.DataHelper;
+import com.iesemilidarder.malcaraz.data.Restaurante;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -14,22 +12,39 @@ import java.util.List;
  * Class MyFirstController
  * By berto. 17/10/2018
  */
+
 @RestController
 public class MyFirstController {
-    @RequestMapping("/")
 
-    @RequestMapping("/hotelAll")
-    public List <Producto> getHotels(){
+    //service
 
-        List<Producto> items= DataHelper.getData();
-        return items;
+    private DataHelper restaService = new DataHelper();
+
+//AllRestaurantes
+
+    @RequestMapping("/restaurantesAll")
+    public List<Restaurante> getAll() {
+        return restaService.getAll();
     }
 
-    @RequestMapping("/hotel")
-    public Producto getHotel(@RequestParam(value = "name", defaultValue = "BrumBrum") String name
-    ) {
-        Hotel car = new Hotel();
-        car.setTitulo(name);
-        return car;
+    //All+Id
+    @RequestMapping(value = "/restauranteAll/{id}", method = RequestMethod.GET)
+    public Restaurante getId(@PathVariable String id) {
+
+        return restaService.getRestaurante(id);
     }
+
+    //AddRestaurantes
+    @RequestMapping(method = RequestMethod.POST, value = "/restauranteAll")
+    public Restaurante addRestaurante(@RequestBody Restaurante restaurante) {
+        return restaService.addRestaurante(restaurante);
+    }
+
+    //DeleteRestaurantes
+    @RequestMapping(method = RequestMethod.DELETE, value = "/restauranteAll/{id]")
+    public void deleteRest(@PathVariable String id) {restaService.deleteRestaurante(id);
+    }
+
 }
+
+
