@@ -1,5 +1,8 @@
 package com.iesemilidarder.malcaraz;
 
+import com.iesemilidarder.malcaraz.data.Actividad;
+import com.iesemilidarder.malcaraz.data.Evento;
+import com.iesemilidarder.malcaraz.data.Hotel;
 import com.iesemilidarder.malcaraz.data.Restaurante;
 
 import java.util.ArrayList;
@@ -9,6 +12,7 @@ import java.util.UUID;
 
 
 public class DataHelper {
+
     public static List<Restaurante> Restaurantes = new ArrayList<Restaurante>(Arrays.asList(
 
             new Restaurante("ES", "R1", "español", "xino", "1"),
@@ -18,13 +22,13 @@ public class DataHelper {
     ));
 //Todos restaurantes
 
-    public List<Restaurante> getAll() {
+    public static List<Restaurante> getAll() {
         return Restaurantes;
     }
 
     //Filtrar por id
-    public Restaurante getRestaurante(String id) {
-        for (Restaurante it : getAll()) {
+    public static Restaurante getRestaurante(String id) {
+        for (Restaurante it : Restaurantes) {
             if (it.getId().equals(id)) {
                 return it;
             }
@@ -33,18 +37,18 @@ public class DataHelper {
     }
 
     //Add Restaurante
-    public Restaurante addRestaurante(Restaurante restaurante) {
+    public static void  addRestaurante(Restaurante restaurante) {
         if (restaurante.getId().isEmpty()) {
             restaurante.setId(UUID.randomUUID().toString());
         }
         Restaurantes.add(restaurante);
-        return restaurante;
     }
 
 
     //Delete Restaurante
-    public void deleteRestaurante(String id) {
+    public static void deleteRestaurante(String id) {
         Restaurantes.removeIf(t -> t.getId().equals(id));
     }
+
 }
 

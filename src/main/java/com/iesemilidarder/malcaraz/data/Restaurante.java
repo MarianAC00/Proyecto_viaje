@@ -5,4 +5,7 @@ public class Restaurante extends Producto {
     {
         super (country, titulo,descripcion,tipo,id);
     }
+    public Restaurante() {
+        super("", "","","","");
+    }
 }
