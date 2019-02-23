@@ -1,30 +1,22 @@
 package com.iesemilidarder.malcaraz.controller;
-
 import com.iesemilidarder.malcaraz.DataHelper;
-import com.iesemilidarder.malcaraz.data.Producto;
 import com.iesemilidarder.malcaraz.data.Restaurante;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 /**
- * com.iesemilidarder.asoto.controller
  * Class MyFirstController
- * By berto. 17/10/2018
  */
 
 @RestController
 public class MyFirstController {
 
-    //service
-
-
 
 //AllRestaurantes
 
-    @RequestMapping("/restaurantesAll")
-    public List<Restaurante> getAll() {
+    @RequestMapping("/restauranteAll")
+    public List<Restaurante> getAll(){
         return DataHelper.getAll();
     }
 
@@ -36,8 +28,8 @@ public class MyFirstController {
     }
 
     //AddRestaurantes
-    @PostMapping("/products")
-    public Restaurante addProduct(
+    @PostMapping("/restauranteAll")
+    public Restaurante addRestaurante(
             @RequestParam String titulo,
             @RequestParam String description,
             @RequestParam String id,
@@ -61,9 +53,8 @@ public class MyFirstController {
 */
     //DeleteRestaurantes
     @RequestMapping(method = RequestMethod.DELETE, value = "/restauranteAll/{id]")
-    public void deleteRest(@PathVariable String id) {DataHelper.deleteRestaurante(id);
+    public void deleteRestaurante(@PathVariable String id) {DataHelper.deleteRestaurante(id);
     }
-
 }
 
 
